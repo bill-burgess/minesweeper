@@ -7,6 +7,7 @@ function Cell(row, col, isMine){
   this.col = col;
   this.isMine = isMine;
   this.hidden = true;
+  this.
 }
 var cell0 = new Cell(0, 0, false)
 var cell1 = new Cell(1, 0, false)
@@ -34,7 +35,16 @@ function startGame () {
 // 1. Are all of the cells that are NOT mines visible?
 // 2. Are all of the mines marked?
 function checkForWin () {
-
+  document.addEventListener('click', checkForWin);
+  document.addEventListener('contextmenu', checkForWin);
+  for(var i = 0, i < board.cells.length, i++){
+    if(board.cells[i].isMine && !board.cells[i].isMarked){
+      return;
+    }else if(board.cells[i].isMine && !board.cells[i].hidden){
+      return;
+    }
+    lib.displayMessage('You win!');
+  }
   // You can use this function call to declare a winner (once you've
   // detected that they've won, that is!)
   //   lib.displayMessage('You win!')
