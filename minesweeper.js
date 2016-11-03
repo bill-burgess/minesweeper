@@ -2,62 +2,23 @@ document.addEventListener('DOMContentLoaded', startGame)
 
 // Define your `board` object here!
 var board = {}
-var cell1 = {
-  row: 1,
-  col: 1,
-  isMine: false,
-  hidden: true
+function Cell(row, col, isMine){
+  this.row = row;
+  this.col = col;
+  this.isMine = isMine;
+  this.hidden = true;
 }
-var cell2 = {
-  row: 2,
-  col: 1,
-  isMine: false,
-  hidden: true
-}
-var cell3 = {
-  row: 3,
-  col: 1,
-  isMine: false,
-  hidden: true
-}
-var cell4 = {
-  row: 1,
-  col: 2,
-  isMine: false,
-  hidden: true
-}
-var cell5 = {
-  row: 2,
-  col: 2,
-  isMine: false,
-  hidden: true
-}
-var cell6 = {
-  row: 3,
-  col: 2,
-  isMine: false,
-  hidden: true
-}
-var cell7 = {
-  row: 1,
-  col: 3,
-  isMine: false,
-  hidden: true
-}
-var cell8 = {
-  row: 2,
-  col: 3,
-  isMine: false,
-  hidden: true
-}
-var cell9 = {
-  row: 3,
-  col: 3,
-  isMine: false,
-  hidden: true
-}
+var cell0 = new Cell(0, 0, false)
+var cell1 = new Cell(1, 0, false)
+var cell2 = new Cell(2, 0, false)
+var cell3 = new Cell(0, 1, false)
+var cell4 = new Cell(1, 1, false)
+var cell5 = new Cell(2, 1, false)
+var cell6 = new Cell(0, 2, false)
+var cell7 = new Cell(1, 2, false)
+var cell8 = new Cell(2, 2, false)
 
-board.cells = [cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8, cell9]
+board.cells = [cell0, cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8,]
 
 function startGame () {
   // Don't remove this function call: it makes the game work!
